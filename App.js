@@ -25,9 +25,19 @@ const App = () => {
   const [ontheflyUpdate, setOntheflyUpdate] = useState(undefined)
 
   const showAlertFromAlert = async () => {
+    const ModalContent = (
+      <FieldWrapper
+        value={currentText}
+        onBlur={value => {
+          setCurrentText(value)
+          setOntheflyUpdate(undefined)
+        }}
+        onChange={setOntheflyUpdate}
+      />
+    )
     const modalHandler = await showCustomAlert({
       title: 'Alert from alert',
-      body: 'This is an alert from an alert',
+      body: ModalContent,
       buttons: [
         {
           title: 'OK',

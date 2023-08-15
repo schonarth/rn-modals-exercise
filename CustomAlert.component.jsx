@@ -37,7 +37,7 @@ const CustomAlert = ({ dismiss, title, body, buttons }) => {
       <View style={styles.modal}>
         <View style={styles.contentContainer}>
           <Text style={styles.title}>{title}</Text>
-          <Text style={styles.detail}>{body}</Text>
+          {body}
           {buttons.map((button, index) => {
             return (
               <View key={index} style={styles.button}>
